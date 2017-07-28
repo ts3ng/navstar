@@ -8,6 +8,14 @@ REBAR            = $(shell pwd)/rebar3
 
 all: compile
 
+develop:
+	docker build -t navstar-dev -f Dockerfile.dev .
+	docker run -it --rm \
+	-e MESOSPHERE_HTTP_CREDENTIALS="dcos-ethos-services:dcos-ethos-services-secret" \
+	-v $$PWD:/host \
+	-w /host \
+	navstar-dev
+
 ##
 ## Compilation targets
 ##
