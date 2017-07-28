@@ -1,0 +1,14 @@
+{application, tcp_metrics,
+ [{description, "tcp_metrics monitor"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {mod, { tcp_metrics_app, []}},
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.
