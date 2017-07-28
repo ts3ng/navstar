@@ -1,5 +1,0 @@
-{application, procket,
-    [{description, "Low level socket operations"},
-     {applications, [crypto]},
-     {registered, []},
-     {vsn, "0.7.0"}]}.
