@@ -1,0 +1,11 @@
+{application,mesos_state,
+             [{description,"An OTP application"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {applications,[kernel,stdlib,jsx,lager,inets,ssl]},
+              {env,[]},
+              {modules,[mesos_state,mesos_state_client,mesos_state_overlay_pb,
+                        mesos_state_sup]},
+              {maintainers,[]},
+              {licenses,[]},
+              {links,[]}]}.

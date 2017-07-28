@@ -1,0 +1,7 @@
+{application,base32,
+             [{description,[]},
+              {vsn,"0.1"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {modules,[base32]}]}.

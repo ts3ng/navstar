@@ -1,0 +1,12 @@
+{application,runtime_tools,
+             [{description,"RUNTIME_TOOLS"},
+              {vsn,"1.11"},
+              {modules,[appmon_info,dbg,observer_backend,percept_profile,
+                        runtime_tools,runtime_tools_sup,erts_alloc_config,
+                        ttb_autostart,dyntrace,system_information,msacc]},
+              {registered,[runtime_tools_sup]},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {mod,{runtime_tools,[]}},
+              {runtime_dependencies,["stdlib-3.0","mnesia-4.12","kernel-5.0",
+                                     "erts-8.0"]}]}.
