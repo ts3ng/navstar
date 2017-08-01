@@ -1,0 +1,11 @@
+FROM erlang:19.2
+
+RUN apt-get update
+RUN wget http://ppa.launchpad.net/chris-lea/libsodium/ubuntu/pool/main/libs/libsodium/libsodium13_1.0.3-1chl1~trusty1_amd64.deb
+RUN wget http://ppa.launchpad.net/chris-lea/libsodium/ubuntu/pool/main/libs/libsodium/libsodium-dev_1.0.3-1chl1~trusty1_amd64.deb
+RUN dpkg -i libsodium13_1.0.3-1chl1~trusty1_amd64.deb
+RUN dpkg -i libsodium-dev_1.0.3-1chl1~trusty1_amd64.deb
+
+# All roles assumed for dev and testing
+
+CMD /bin/bash

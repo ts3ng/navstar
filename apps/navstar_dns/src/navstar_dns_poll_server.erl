@@ -189,10 +189,10 @@ scheme() ->
 mesos_master_uri() ->
     case inet:getaddr("leader.mesos", inet) of
         {ok, _} ->
-            lists:flatten(scheme() ++ "://leader.mesos:5050/state");
+            lists:flatten(scheme() ++ "://leader.mesos:5050/version");
         _ ->
             IP = inet:ntoa(mesos_state:ip()),
-            lists:flatten(io_lib:format("~s://~s:5050/state", [scheme(), IP]))
+            lists:flatten(io_lib:format("~s://~s:5050/version", [scheme(), IP]))
     end.
 
 %% We should only ever poll mesos dns on the masters

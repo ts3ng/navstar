@@ -18,6 +18,13 @@ compile:
 clean:
 	$(REBAR) clean
 
+develop:
+	docker build -t ethos-navstar -f Dockerfile.dev .
+	docker run -it --rm \
+	-v $$PWD:/host \
+	-w /host \
+	ethos-navstar
+
 ##
 ## Test targets
 ##
@@ -56,6 +63,11 @@ stage:
 
 shell:
 	${REBAR} shell --apps spartan
+
+release:
+	$(REBAR) clean
+	${REBAR} as prod tar
+	cp _build/prod/rel/navstar/navstar*.tar.tz ./release/
 
 DIALYZER_APPS = kernel stdlib erts sasl eunit syntax_tools compiler crypto
 
