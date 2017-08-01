@@ -66,8 +66,13 @@ shell:
 
 release:
 	$(REBAR) clean
+	rm -rf ./_build/*
 	${REBAR} as prod tar
-	cp _build/prod/rel/navstar/navstar*.tar.tz ./release/
+	cp -f ./_build/prod/rel/navstar/navstar*.tar.gz ./release/
+
+s3:
+	aws s3 cp ./release/navstar*.tar.gz s3://ethos-dcos-binaries/dcos-navstar/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+	
 
 DIALYZER_APPS = kernel stdlib erts sasl eunit syntax_tools compiler crypto
 
